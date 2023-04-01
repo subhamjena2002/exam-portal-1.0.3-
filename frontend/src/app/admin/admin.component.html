@@ -1,0 +1,110 @@
+<header>
+  <h1>Exam Portal</h1>
+</header>
+
+<section class="table-container">
+  <div class="add-search-container">
+    <div class="search-div">
+      <input type="search" name="topic" placeholder="search by topic">
+    </div>
+    <div class="btn-div">
+      <button role="button" class="btn" (click)="onAddQuestion()">Add Question</button>
+    </div>
+  </div>
+
+  <div class="table-div">
+    <table>
+      <thead>
+        <tr>
+          <th>Action</th>
+          <th>Topic</th>
+          <th>Question</th>
+          <th>Option 1</th>
+          <th>Option 2</th>
+          <th>Option 3</th>
+          <th>Option 4</th>
+          <th>Answer</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let question of allQuestion">
+          <td>
+            <button role="button" class="btn update-btn" (click)="onUpdate(question.id)">Update</button><button
+              role="button" class="btn remove-btn" (click)="onDelete(question.id)">Remove</button>
+          </td>
+          <td>{{ question.topic }}</td>
+          <td>{{ question.question }}</td>
+          <td>{{ question.option1 }}</td>
+          <td>{{ question.option2 }}</td>
+          <td>{{ question.option3 }}</td>
+          <td>{{ question.option4 }}</td>
+          <td>{{ question.answer }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- Modal box -->
+<div [ngClass]="['modal', isModalOpen ? '' : 'd-none']" #modalbox>
+  <div class="modal-box">
+    <div class="header">
+      <h3>Add Question</h3>
+    </div>
+    <div class="body">
+      <form method="post" #questionForm="ngForm" (submit)="onQuestionSubmit(questionForm)">
+        <div class="row-1">
+          <textarea rows="3" class="form-control" placeholder="Enter question" name="question"
+            [(ngModel)]="questionObject.question"></textarea>
+        </div>
+
+        <div class="row-2">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Option 1" name="option1"
+              [(ngModel)]="questionObject.option1">
+          </div>
+
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Option 2" name="option2"
+              [(ngModel)]="questionObject.option2">
+          </div>
+        </div>
+
+
+        <div class="row-2">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Option 3" name="option3"
+              [(ngModel)]="questionObject.option3">
+          </div>
+
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Option 4" name="option4"
+              [(ngModel)]="questionObject.option4">
+          </div>
+        </div>
+
+        <div class="row-2">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Answer" name="answer"
+              [(ngModel)]="questionObject.answer">
+          </div>
+
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Topic" name="topic" [(ngModel)]="questionObject.topic">
+          </div>
+
+        </div>
+
+        <!-- id filled -->
+        <input type="hidden" class="form-control" name="id" [(ngModel)]="questionObject.id">
+
+        <div class="row-4">
+          <div class="btn-group">
+            <button type="submit" class="btn">Submit</button>
+            <button type="button" class="btn" (click)="isModalOpen = false">Cancel</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

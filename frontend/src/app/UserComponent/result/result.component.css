@@ -1,0 +1,29 @@
+.head {
+    background-color: var(--powder-blue);
+    padding: 10px 20px;
+    text-align: center;
+    color: var(--white);
+
+  }
+  .results table, th, tr, td {
+    border: 1px solid rgb(18, 18, 18);
+    padding: 10px 20px;
+    text-align: center;
+    border-collapse:collapse ;
+    background-color: rgb(255, 255, 255);
+}
+
+.results  table{
+  width: 95%;
+  margin: 20px auto;
+  background-color: var(--white);
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 7px rgba(125, 124, 124, 0.69);
+}
+
+button{
+  margin: 2% 0 0 43%;
+  padding: 1.5rem 3rem;
+  font-size: 1.7rem;
+}

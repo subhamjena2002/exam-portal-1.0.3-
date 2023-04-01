@@ -1,0 +1,53 @@
+<div class="container">
+  <div>
+    <h2>Exam</h2>
+  </div>
+
+  <form action="#">
+    <div class="content" *ngFor="let question of allQuestion; let i=index;">
+      <label for="question">{{question.question}}</label>
+      <input type="hidden" [value]="question.id" name="{{question.id}}" id="option1">
+      <div>
+        <mat-grid-list cols="2" rowHeight="50px">
+          <mat-grid-tile>
+            <span>
+              <input type="radio" [value]="question.option1" name="{{question.id}}" id="option1"
+                (click)="addAnswer(question.id,question.option1)">
+                <label for="option1">{{question.option1}}</label>
+              </span>
+
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <span>
+              <input type="radio" [value]="question.option2" name="{{question.id}}" id="option1"
+                (click)="addAnswer(question.id,question.option2)">
+              <label for="option2">{{question.option2}}</label>
+            </span>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <span>
+              <input type="radio" [value]="question.option3" name="{{question.id}}" id="option1"
+                (click)="addAnswer(question.id,question.option3)">
+              <label for="option3">{{question.option3}}</label>
+            </span>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <span>
+              <input type="radio" [value]="question.option4" name="{{question.id}}" id="option1"
+                (click)="addAnswer(question.id,question.option4)">
+              <label for="option4">{{question.option4}}</label>
+            </span>
+          </mat-grid-tile>
+        </mat-grid-list>
+        <!-- <button mat-raised-button color="primary" (click)="showAnswer(i)" :ng-model="i">Answer</button>
+                <p [id]="i" *ngIf="!isCollapsed">{{question.answer}}</p> -->
+      </div>
+    </div>
+  </form>
+
+
+  <div class="submit">
+    <button mat-raised-button color="warn" type="button" (click)="submitAnswer()">submit</button>
+  </div>
+
+</div>

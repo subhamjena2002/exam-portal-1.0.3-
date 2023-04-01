@@ -1,0 +1,148 @@
+header {
+    background-color: var(--powder-blue);
+    box-shadow: 0 0 10px rgba(4, 105, 199, 0.9);
+    padding: 10px 20px;
+    text-align: center;
+    color: var(--white);
+}
+
+.table-container {
+    width: 95%;
+    margin: 20px auto;
+    background-color: var(--white);
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(4, 105, 199, 0.9);
+}
+
+.table-container .table-div {
+    margin-top: 15px;
+}
+
+.table-container table {
+    width: 100%;
+}
+
+.table-container table,
+thead,
+tbody,
+tr,
+th,
+td {
+    border: 2px solid var(--sea-green);
+    border-collapse: collapse;
+    text-align: center;
+    padding: 15px;
+}
+
+.btn {
+    all: unset;
+    cursor: pointer;
+    padding: 10px;
+    background-color: var(--navy-blue);
+    color: var(--white);
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, .3);
+    border-radius: 7px;
+    text-align: center;
+}
+
+.table-container table .update-btn {
+    margin-right: 10px;
+}
+
+.table-container table .remove-btn {
+    background-color: #E90064;
+}
+
+.table-container .add-search-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.table-container .add-search-container input {
+    font-size: 1.02rem;
+    padding: 5px;
+}
+
+.modal {
+    position: fixed;
+    background-color: rgba(0, 0, 0, .3);
+    inset: 0;
+    display: grid;
+    place-items: center;
+}
+
+.modal .modal-box {
+    background-color: var(--white);
+    width: 50%;
+    border-radius: 10px;
+    animation: zoomOut .25s;
+}
+
+.modal .modal-box .header {
+    background-color: var(--navy-blue);
+    padding: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    text-align: center;
+    color: var(--white);
+}
+
+.modal .modal-box .body {
+    padding: 15px;
+}
+
+.modal .modal-box .body .row-1 textarea {
+    width: 100%;
+}
+
+.modal .modal-box .body .row-2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.modal .modal-box .body .row-2 input {
+    width: 250px;
+    padding: 5px;
+}
+
+.modal .modal-box .body .row-3 {
+    display: grid;
+    place-items: center;
+}
+
+.modal .modal-box .body .row-3 input {
+    width: 250px;
+    padding: 5px;
+}
+
+.modal .modal-box .body .row-4 {
+    text-align: right;
+}
+
+.modal .modal-box .body .row-4 button {
+    margin: 10px 5px;
+}
+
+.modal .modal-box .body .row-4 button~button {
+    background-color: deeppink;
+}
+
+.d-none {
+    display: none;
+}
+
+@keyframes zoomOut {
+    from {
+        scale: 0;
+        opacity: 0;
+    }
+
+    to {
+        scale: 1;
+        opacity: 1;
+    }
+}

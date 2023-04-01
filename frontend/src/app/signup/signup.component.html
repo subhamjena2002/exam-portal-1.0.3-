@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="container-head">
+        <h2>Signup</h2>
+    </div>
+    <div class="container-body">
+        <form action="#" #userForm="ngForm" method="post" autocomplete="off" (submit)="onUserSubmit(userForm)">
+            <div class="form-group">
+                <label for="firstname">Enter name</label>
+                <input type="text" name="name" id="name" class="form-control" [(ngModel)]="userObject.name">
+            </div>
+  
+            <div class="form-group">
+                <label for="email">Enter email</label>
+                <input type="email" name="email" id="email" class="form-control" [(ngModel)]="userObject.email">
+            </div>
+  
+            <div class="form-group">
+                <label for="password">Enter password</label>
+                <input type="password" name="password" id="password" class="form-control" [(ngModel)]="userObject.password">
+            </div>
+  
+            <div class="form-group">
+                <label for="phone">Phone number</label>
+                <input type="tel" name="Phoneno" id="Phoneno" class="form-control" [(ngModel)]="userObject.Phoneno">
+            </div>
+  
+            <!-- <div class="form-group">
+                <label for="address">Enter address</label>
+                <textarea name="" id="" rows="4" name="address" class="form-control" [(ngModel)]="userObject.address"></textarea>
+            </div> -->
+  
+            <div class="btn-group">
+                <button type="button" routerLink="/login">Signin</button>
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+  </div>

@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="container-head">
+      <h2><b>SIGNIN EXAM PORTAL</b></h2>
+  </div>
+  <div class="container-body">
+      <form action="#" method="post"#userForm="ngForm" autocomplete="off" (submit)="onUserSubmit(userForm)">
+          <div class="form-group">
+              <label for="username"> Username</label>
+              <input type="text" name="email" id="email" placeholder="Enter username" class="form-control" [(ngModel)]="userObject.name">
+          </div>
+
+          <div class="form-group">
+              <label for="password">password</label>
+              <input type="password" name="password" id="password" placeholder="Enter password" class="form-control" [(ngModel)]="userObject.password">
+          </div>
+
+        
+
+       <!--    <div class="form-group">
+              <label for="phone">Phone number</label>
+              <input type="tel" name="phone" id="phone" class="form-control">
+          </div> -->
+
+         <!--  <div class="form-group">
+              <label for="address">Enter address</label>
+              <textarea name="" id="" rows="4" class="form-control"></textarea>
+          </div> -->
+
+          <div class="btn-group">
+              <button type="button" type="submit">Signin</button>
+              <button type="submit" routerLink="/signup">Signup</button>
+          </div>
+      </form>
+  </div>
+</div>

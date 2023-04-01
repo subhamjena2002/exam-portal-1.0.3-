@@ -1,0 +1,44 @@
+<mat-toolbar color="primary">
+    <mat-icon>book</mat-icon>
+    <span>ExamPortal</span>
+    <button mat-icon-button class="example-icon" (click)="opened=!opened">
+
+      <mat-icon>menu</mat-icon>
+    </button>
+  <!-- <button mat-raised-button  routerLink="/signup" class="right">Signup </button>
+  <button mat-raised-button  routerLink="/login" class="right-gap"> Signin</button> -->
+  <button mat-raised-button  class="right" (click)="logout()">Logout</button>
+  </mat-toolbar>
+
+  <mat-sidenav-container>
+    <mat-sidenav [(opened)]="opened" mode="side">
+
+      <mat-list class="navbar">
+        <h5>Catagory</h5>
+        <mat-list-item> <mat-icon color="primary">label_important</mat-icon>
+          <a routerLink="/all">All</a></mat-list-item>
+
+
+        <mat-list-item> <mat-icon color="primary">label_important</mat-icon>
+          <a routerLink="/programming">Programming</a></mat-list-item>
+
+
+        <mat-list-item> <mat-icon color="primary">label_important</mat-icon>
+          <a routerLink="/gk">General Knowledge</a></mat-list-item>
+
+
+        <mat-list-item> <a routerLink="/about us">About us</a></mat-list-item>
+
+        <mat-list-item> <a routerLink="/contact">Contact us</a></mat-list-item>
+
+      </mat-list>
+
+
+
+
+    </mat-sidenav>
+    <mat-sidenav-content>
+     <app-all></app-all>
+
+
+    </mat-sidenav-content>

@@ -1,0 +1,46 @@
+*{
+  font-size: 1.4rem;
+}
+
+.container {
+  width: 100%;
+}
+
+.container h2 {
+  text-align: center;
+  background-color: black;
+  color: aliceblue;
+  border-bottom: 1px solid rgb(150, 144, 144);
+  padding: 10px;
+}
+
+.content {
+  margin: 20px;
+  border-bottom: 1px solid rgb(150, 144, 144);
+  padding-bottom: 20px;
+  box-shadow: 0 0 7px blueviolet;
+  border-radius: 7px;
+  padding: 20px;
+}
+
+.content input {
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+
+.container1 {
+  color: #333;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.container .submit {
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+}
+
+button{
+  padding: 1.4rem;
+}

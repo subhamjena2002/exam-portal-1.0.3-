@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    background-color: rgb(7, 11, 31);
+  }
+
+  .container {
+    background-color: white;
+    width: 40%;
+    margin: 10px auto;
+    border-radius: 10px;
+    box-shadow: 10px 20px 10px 10px rgba(46, 50, 57, 0.2);
+  }
+
+  .container .container-head {
+    text-align: center;
+    padding: 10px;
+    border-bottom: 1px solid gray;
+  }
+
+  .container .container-head h2 {
+    color: rgb(9, 143, 9);
+  }
+
+  .container .container-body {
+    margin: 10px 0;
+    padding: 0 15px;
+  }
+
+  .container .container-body .form-group {
+    margin-bottom: 10px;
+  }
+
+
+  .container .container-body .form-control {
+    width: 100%;
+    margin-top: 5px;
+    font-size: 1.02rem;
+    padding: 10px;
+    border: 1px solid rgb(177, 178, 180);
+    border-radius: 5px;
+  }
+
+  .container .container-body textarea.form-control {
+    resize: none;
+  }
+
+  .container .container-body .form-control:focus {
+    outline: 1px solid rgb(5, 22, 74, .3);
+  }
+
+  .container .container-body .btn-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .container .container-body button {
+    all: unset;
+    margin: 0 0 10px;
+    width: 100% ;
+    padding: 10px;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 10px;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: rgb(33, 123, 10);
+  }
+
+  @media (max-width: 700px) {
+    .container {
+        width: 90%;
+    }
+
+    body {
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+    }
+  }
