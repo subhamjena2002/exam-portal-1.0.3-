@@ -21,7 +21,6 @@ export class LoginComponent implements OnInit  {
     const user = this.filterFormData(userForm.value);
     this.userService.loginUser(user).subscribe(data => {  
      this.responseobj=data;
-     debugger
     if(this.responseobj.code === '200' && this.responseobj.status === 'success'){
      // alert(this.responseobj.message);
       this.router.navigate(["/user"]);
