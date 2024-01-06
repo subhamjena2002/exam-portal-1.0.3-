@@ -4,8 +4,11 @@
 
 <section class="table-container">
   <div class="add-search-container">
-    <div class="search-div">
+   <!--  <div class="search-div">
       <input type="search" name="topic" placeholder="search by topic">
+    </div> -->
+    <div class="btn-div">
+      <button role="button" class="btn1" (click)="onUploadQuestion()">Upload Question</button>
     </div>
     <div class="btn-div">
       <button role="button" class="btn" (click)="onAddQuestion()">Add Question</button>
@@ -29,11 +32,12 @@
       <tbody>
         <tr *ngFor="let question of allQuestion">
           <td>
-            <button role="button" class="btn update-btn" (click)="onUpdate(question.id)">Update</button><button
-              role="button" class="btn remove-btn" (click)="onDelete(question.id)">Remove</button>
+            <button role="button" class="btn update-btn" (click)="onUpdate(question.id)">Update</button>
+            <button
+              role="button" class="btn remove-btn remove" (click)="onDelete(question.id)">Remove</button>
           </td>
           <td>{{ question.topic }}</td>
-          <td>{{ question.question }}</td>
+          <td class="question">{{ question.question }}</td>
           <td>{{ question.option1 }}</td>
           <td>{{ question.option2 }}</td>
           <td>{{ question.option3 }}</td>
@@ -108,3 +112,30 @@
     </div>
   </div>
 </div>
+
+<div [ngClass]="['modal', isUploadModalOpen ? '' : 'd-none']" #modalbox>
+  <div class="modal-box">
+    <div class="header">
+      <h3>Upload Questions</h3>
+    </div>
+    <div class="body">
+
+      <form method="post" #questionForm="ngForm" (submit)="uploadFile()">
+        
+        <div class="row-2">
+          <div class="form-group">
+            <input type="file" class="form-control" (change)="selectFile($event)" accept="application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,text/csv" placeholder="UploadFile" name="answer" >
+          </div>
+        </div>
+        
+        <div class="row-4">
+          <div class="btn-group">
+            <button type="submit" class="btn">Submit</button>
+            <button type="button" class="btn" (click)="cancelUpload()">Cancel</button>
+          </div>
+        </div>
+
+      </form>        
+    </div>
+    </div>
+  </div>

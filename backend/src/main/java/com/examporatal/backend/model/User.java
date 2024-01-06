@@ -19,7 +19,8 @@ public class User {
     @Indexed(unique = true)
     private String email;
     private String password;
-    private Number Phoneno;
+    private String phoneno;
+    
     private String address;
 
 }

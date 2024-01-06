@@ -21,13 +21,13 @@
   
             <div class="form-group">
                 <label for="phone">Phone number</label>
-                <input type="tel" name="Phoneno" id="Phoneno" class="form-control" [(ngModel)]="userObject.Phoneno">
+                <input type="text" name="phoneno" id="phoneno" class="form-control" [(ngModel)]="userObject.phoneno">
             </div>
   
-            <!-- <div class="form-group">
+            <div class="form-group">
                 <label for="address">Enter address</label>
-                <textarea name="" id="" rows="4" name="address" class="form-control" [(ngModel)]="userObject.address"></textarea>
-            </div> -->
+                <textarea id="address" rows="4" name="address" class="form-control" [(ngModel)]="userObject.address"></textarea>
+            </div>
   
             <div class="btn-group">
                 <button type="button" routerLink="/login">Signin</button>

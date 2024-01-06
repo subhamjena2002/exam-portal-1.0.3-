@@ -2,22 +2,19 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-nav',
-  templateUrl: './nav.component.html',
-  styleUrls: ['./nav.component.css']
+  selector: 'app-nav-admin',
+  templateUrl: './nav-admin.component.html',
+  styleUrls: ['./nav-admin.component.css']
 })
-export class NavComponent implements OnInit {
+export class NavAdminComponent  implements OnInit {
   opened=true;
   constructor( private router: Router) {}
   ngOnInit(): void {}
-  /**
-   * name
-   */
+
   public logout() {
-    sessionStorage.removeItem("isLoggedIn")
+    sessionStorage.removeItem("isLoggedIn");
     sessionStorage.removeItem("userEmailId");
     this.router.navigate(["/login"]);
-  
-
   }
 }
+

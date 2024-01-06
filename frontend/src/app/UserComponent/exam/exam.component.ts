@@ -1,7 +1,8 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, HostListener, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { Question } from '../../model/Question';
 import { QuestionService } from '../../service/question.service';
+import { AnswerService } from 'src/app/service/answer.service';
 
 @Component({
   selector: 'app-exam',
@@ -13,18 +14,24 @@ export class ExamComponent implements OnInit {
   questionObject = {} as Question;
   isCollapsed: boolean = true;
   answerData: any = [];
+  topic: string = '';
 
 
   correctAns = 0;
   incorrectAns = 0;
-  constructor(private questionService: QuestionService, private router: Router) {
+  constructor(private questionService: QuestionService, private router: Router, private ansService: AnswerService) {
 
   }
 
+  elem = document.documentElement; 
 
   ngOnInit(): void {
-    this.getAllQuestionByTopic();
+     this.getAllQuestionByTopic();
+    this.elem.requestFullscreen(); 
     // this.showAnswer();
+  }
+  HandleOnFocus(){
+    this.router.navigateByUrl('/user');
   }
 
   getAllQuestionByTopic() {
@@ -55,6 +62,7 @@ export class ExamComponent implements OnInit {
   submitAnswer() {
 
     this.allQuestion.filter((q: Question, index: number) => {
+      this.topic = q.topic;
       this.answerData.forEach((ans: any) => {
         if (ans.hasOwnProperty(q.id) && ans[q.id] === q.answer) {
           this.correctAns++;
@@ -66,10 +74,31 @@ export class ExamComponent implements OnInit {
       });
     });
 
-    /* this.answerClass.getAnswer(this.correctAns, this.incorrectAns); */
-    this.router.navigate(["/result", this.correctAns, this.incorrectAns]);
+      /* this.answerClass.getAnswer(this.correctAns, this.incorrectAns); */
+      this.router.navigate(["/result", this.correctAns, this.incorrectAns]);
+
+    let resultData:any = {};
+    resultData.email = sessionStorage.getItem("userEmailId");
+    resultData.correctAns = this.correctAns;
+    resultData.incorrectAns = this.incorrectAns;
+    resultData.topic = this.topic;
+    this.ansService.saveResult(resultData).subscribe(data => {
+      console.log("Answer saved successfully");
+    });
+
+    console.log(resultData);
+  
 
   }
+  @HostListener('document:visibilitychange', ['$event'])
+appVisibility() {
+   if (document.hidden) {
+      //do whatever you want
+      sessionStorage.setItem("isLoggedIn", "false");
+      this.router.navigate(['/login']);
+      
+    } 
+}
 
 
 }

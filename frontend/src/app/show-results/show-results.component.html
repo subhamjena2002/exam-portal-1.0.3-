@@ -1,0 +1,34 @@
+<section class="table-container">
+    <div class="add-search-container">
+    </div>
+  
+    <div class="table-div">
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Topic</th>
+            <th>Email</th>
+            <th>CorrectAns</th>
+            <th>IncerrectAns</th>
+            <th>Marks secured</th>
+         <!--    <th>Option 4</th>
+            <th>Answer</th> -->
+          </tr>
+        </thead>
+        <tbody>
+        
+           <tr *ngFor="let abc of resultlist ">
+            <td>{{userlist.name}}</td>
+            <td>{{abc.topic}}</td>
+            <td>{{abc.email}}</td>
+            <td>{{abc.correctAns}}</td>
+            <td>{{abc.incorrectAns}}</td>
+            <td>{{abc.correctAns * 10}}</td>
+          </tr>
+          
+        </tbody>
+      </table>
+    </div>
+  </section>
+  

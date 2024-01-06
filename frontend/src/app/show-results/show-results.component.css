@@ -1,0 +1,63 @@
+header {
+    background-color: var(--powder-blue);
+    box-shadow: 0 0 10px rgba(4, 105, 199, 0.9);
+    padding: 10px 20px;
+    text-align: center;
+    color: var(--white);
+}
+
+.table-container {
+    width: 95%;
+    margin: 20px auto;
+    background-color: var(--white);
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(4, 105, 199, 0.9);
+}
+
+.table-container .table-div {
+    margin-top: 15px;
+}
+
+.table-container table {
+    width: 100%;
+}
+
+.table-container table,
+thead,
+tbody,
+tr,
+th,
+td {
+    border: 2px solid var(--sea-green);
+    border-collapse: collapse;
+    text-align: center;
+    padding: 15px;
+}
+.question{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 220px;
+}
+
+
+
+.table-container table .update-btn {
+    margin-right: 10px;
+}
+
+.table-container table .remove-btn {
+    background-color: #E90064;
+}
+
+
+
+
+
+
+.d-none {
+    display: none;
+}
+
+

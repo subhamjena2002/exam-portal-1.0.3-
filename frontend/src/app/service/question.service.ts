@@ -28,4 +28,8 @@ export class QuestionService {
   deleteQuestion(id: string) {
     return this.httpClient.delete(this.baseUrl + `/${id}`);
   }
+  uploadFile(file: any) {
+    return this.httpClient.post(this.baseUrl+'/uploadFile',file);
+  }
+
 }

@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './routes/app-routing.module';
 import { AdminComponent } from './admin/admin.component';
@@ -30,6 +29,9 @@ import { InstructionComponent } from './UserComponent/instruction/instruction.co
 import { ExamComponent } from './UserComponent/exam/exam.component';
 import { ResultComponent } from './UserComponent/result/result.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { NavAdminComponent } from './nav-admin/nav-admin.component';
+import { AnswerComponent } from './answer/answer.component';
+import { ShowResultsComponent } from './show-results/show-results.component';
 
 
 
@@ -49,6 +51,11 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     InstructionComponent,
     ExamComponent,
     ResultComponent,
+    NavAdminComponent,
+    AnswerComponent,
+    ShowResultsComponent,
+  
+  
   ],
   imports: [
     BrowserModule,

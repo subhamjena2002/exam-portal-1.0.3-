@@ -13,20 +13,27 @@ import { InstructionComponent } from '../UserComponent/instruction/instruction.c
 import { ExamComponent } from '../UserComponent/exam/exam.component';
 import { ResultComponent } from '../UserComponent/result/result.component';
 import { AboutusComponent } from '../UserComponent/aboutus/aboutus.component';
+import { AuthGuard } from '../authgurd/auth.guard';
+import { NavAdminComponent } from '../nav-admin/nav-admin.component';
+import { AnswerComponent } from '../answer/answer.component';
+import { ShowResultsComponent } from '../show-results/show-results.component';
 
 const routes: Routes = [
-  { path: 'admin', component: AdminComponent },
-  { path: 'user', component: UserComponent },
+  { path: 'admin123', component: AdminComponent ,canActivate:[AuthGuard]},
+  { path: 'user', component: UserComponent ,canActivate:[AuthGuard]},
+  { path: 'admin', component: NavAdminComponent ,canActivate:[AuthGuard]},
   { path: 'login', component: LoginComponent },
   { path: 'welcome', component: WelcomeComponent },
   { path: 'signup', component: SignupComponent },
-  { path: 'programming', component: ProgrammingComponent },
-  { path: 'gk', component: GkComponent },
-  { path: 'all', component: AllComponent },
-  { path: 'instruction', component: InstructionComponent },
-  { path: 'exam', component: ExamComponent },
-  { path: 'about us', component: AboutusComponent },
-  { path: 'result/:correct/:incorrect', component: ResultComponent },
+  { path: 'programming', component: ProgrammingComponent,canActivate:[AuthGuard] },
+  { path: 'gk', component: GkComponent,canActivate:[AuthGuard] },
+  { path: 'all', component: AllComponent,canActivate:[AuthGuard] },
+  { path: 'answer', component: AnswerComponent,canActivate:[AuthGuard] },
+  { path: 'instruction', component: InstructionComponent,canActivate:[AuthGuard] },
+  { path: 'exam', component: ExamComponent ,canActivate:[AuthGuard]},
+  { path: 'showresults', component: ShowResultsComponent ,canActivate:[AuthGuard]},
+  { path: 'about us', component: AboutusComponent ,canActivate:[AuthGuard]},
+  { path: 'result/:correct/:incorrect', component: ResultComponent,canActivate:[AuthGuard] },
 
   { path: '', redirectTo: 'welcome', pathMatch: 'full' },
 ]

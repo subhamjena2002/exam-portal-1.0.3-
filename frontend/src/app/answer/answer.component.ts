@@ -2,22 +2,23 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-nav',
-  templateUrl: './nav.component.html',
-  styleUrls: ['./nav.component.css']
+  selector: 'app-answer',
+  templateUrl: './answer.component.html',
+  styleUrls: ['./answer.component.css']
 })
-export class NavComponent implements OnInit {
+export class AnswerComponent implements OnInit {
   opened=true;
   constructor( private router: Router) {}
   ngOnInit(): void {}
-  /**
-   * name
-   */
+
   public logout() {
-    sessionStorage.removeItem("isLoggedIn")
+    sessionStorage.removeItem("isLoggedIn");
     sessionStorage.removeItem("userEmailId");
     this.router.navigate(["/login"]);
+  }
+  startTopic(topic:string){
+    sessionStorage.setItem('topic',topic);
+  }
   
 
-  }
 }

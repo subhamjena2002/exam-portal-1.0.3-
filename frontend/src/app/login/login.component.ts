@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { User } from '../model/User';
 import { Router } from '@angular/router';
 import { UserService } from "../service/user.service";
+import { BehaviorSubject } from 'rxjs';
+import { AuthGuard } from '../authgurd/auth.guard';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +13,7 @@ import { UserService } from "../service/user.service";
 export class LoginComponent implements OnInit  {
   userObject = {} as User;
   responseobj = {} as any;
-  constructor(private userService: UserService, private router: Router) {
+  constructor(private userService: UserService,auth:AuthGuard,  private router: Router) {
 
   }
   ngOnInit(): void {
@@ -23,6 +25,10 @@ export class LoginComponent implements OnInit  {
      this.responseobj=data;
     if(this.responseobj.code === '200' && this.responseobj.status === 'success'){
      // alert(this.responseobj.message);
+   /*   if(auth.) */
+  /*  auth. setAactiveRouter(); */
+      sessionStorage.setItem("isLoggedIn", "true");
+      sessionStorage.setItem("userEmailId", user.email);
       this.router.navigate(["/user"]);
     }else
     {
@@ -31,7 +37,7 @@ export class LoginComponent implements OnInit  {
       
     });
   }
-
+ 
   filterFormData(formValue: User) {
     let data: keyof User;
     for (data in formValue) {

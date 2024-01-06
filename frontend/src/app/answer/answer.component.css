@@ -1,0 +1,33 @@
+mat-sidenav-container {
+    height: calc(205vh - 115vh);
+}
+mat-sidenav {
+    width :200px;
+    background-color: #eee;
+
+}
+.navbar a {
+    text-decoration: none;
+    color: black;
+    
+}
+.navbar h5 {
+    margin: 20px;
+    opacity: 45%;
+    
+}
+.right {
+    margin-inline-start:auto ;
+  }
+  .right-gap{
+    margin-left: 10px;
+  }
+
+  .example-card  {
+    max-width: 400px;
+    margin: 20px;
+  }
+  h4 {
+    margin: 70px 0 0 30px;
+    opacity: 50%;
+  }

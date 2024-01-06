@@ -19,6 +19,10 @@ public class QuestionService {
         questionRepository.save(question);
     }
 
+     public void addAllQuestion(List<Question> questions) {
+        questionRepository.saveAll(questions);
+    }
+
     public List<Question> getAllQuestionByTopic(String topic) {
         if(topic!=null && !topic.isEmpty()){
         return questionRepository.findByTopic(topic);

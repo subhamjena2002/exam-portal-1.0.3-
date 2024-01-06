@@ -35,6 +35,17 @@ td {
     padding: 15px;
 }
 
+td > .remove {
+    margin-top: 5px;
+    margin-left: 5px;
+}
+.question{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 220px;
+}
+
 .btn {
     all: unset;
     cursor: pointer;
@@ -45,10 +56,21 @@ td {
     border-radius: 7px;
     text-align: center;
 }
-
-.table-container table .update-btn {
-    margin-right: 10px;
+.btn1 {
+    all: unset;
+    cursor: pointer;
+    padding: 10px;
+    background-color: var(--navy-blue);
+    color: var(--white);
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, .3);
+    border-radius: 7px;
+    text-align: center;
+ /*    margin-left: 50em; */
 }
+
+/* .table-container table .update-btn {
+    margin-right: 10px;
+} */
 
 .table-container table .remove-btn {
     background-color: #E90064;
